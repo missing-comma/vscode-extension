@@ -1,14 +1,5 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"noImplicitReturns": true,
-		"noUnusedLocals": true,
-		"outDir": "lib",
-		"sourceMap": true,
-		"strict": true,
-		"target": "es2017",
-		"skipLibCheck": true
-	},
-	"compileOnSave": true,
-	"exclude": ["node_modules", "**/node_modules"]
+	"extends": "@missing-comma/tsconfig/node.json",
+	"include": ["."],
+	"exclude": ["dist", "build", "node_modules"]
 }

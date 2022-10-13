@@ -121,3 +121,5 @@ serverless.yml
 *.secret.*
 
 .turbo
+
+testing-area

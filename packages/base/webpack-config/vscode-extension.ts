@@ -4,40 +4,52 @@ import { webpackConfigComposer } from './src/helper/webpack-config-composer';
 //@ts-check
 /** @typedef {import('webpack').Configuration} WebpackConfig **/
 
-export default webpackConfigComposer((dirname: string) => ({
-	target: 'node', // VS Code extensions run in a Node.js-context 📖 -> https://webpack.js.org/configuration/node/
-	mode: 'none', // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
+export default webpackConfigComposer((dirname: string) => {
+	const resolve = (...paths: string[]) => path.resolve(dirname, ...paths);
 
-	entry: './src/extension.ts', // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
-	output: {
-		// the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
-		path: path.resolve(dirname, 'dist'),
-		filename: 'extension.js',
-		libraryTarget: 'commonjs2',
-	},
-	externals: {
-		vscode: 'commonjs vscode', // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
-		// modules added here also need to be added in the .vscodeignore file
-	},
-	resolve: {
-		// support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader
-		extensions: ['.ts', '.js'],
-	},
-	module: {
-		rules: [
-			{
-				test: /\.ts$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'ts-loader',
-					},
-				],
+	return {
+		target: 'node', // VS Code extensions run in a Node.js-context 📖 -> https://webpack.js.org/configuration/node/
+		mode: 'none', // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
+
+		entry: resolve('./src/extension.ts'), // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
+		output: {
+			// the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
+			path: resolve('dist'),
+			filename: 'extension.js',
+			libraryTarget: 'commonjs2',
+		},
+		externals: {
+			vscode: 'commonjs vscode', // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
+			// modules added here also need to be added in the .vscodeignore file
+		},
+		resolve: {
+			alias: {
+				'~': resolve('src'),
 			},
-		],
-	},
-	devtool: 'nosources-source-map',
-	infrastructureLogging: {
-		level: 'log', // enables logging required for problem matchers
-	},
-}));
+
+			// support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader
+			extensions: ['.ts', '.js'],
+		},
+		module: {
+			rules: [
+				{
+					test: /\.ts$/,
+					exclude: /node_modules/,
+					use: [
+						{
+							loader: 'ts-loader',
+						},
+					],
+				},
+				{
+					test: [/test/],
+					exclude: /test/,
+				},
+			],
+		},
+		devtool: 'nosources-source-map',
+		infrastructureLogging: {
+			level: 'log', // enables logging required for problem matchers
+		},
+	};
+});

@@ -1,0 +1,17 @@
+{
+	"name": "@missing-comma/utils",
+	"version": "0.0.0",
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint *.ts*",
+		"test": "jest --runInBand",
+		"build": "tsc",
+		"build:watch": "tsc --watch"
+	},
+	"devDependencies": {
+		"@missing-comma/eslint-config-custom": "*",
+		"@missing-comma/tsconfig": "*",
+		"eslint": "^7.32.0",
+		"typescript": "^4.5.2"
+	}
+}

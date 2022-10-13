@@ -39,6 +39,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+node_modules_*/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -102,3 +103,21 @@ dist
 
 # TernJS port file
 .tern-port
+
+# local env files
+.env*
+!.env.sample*
+
+# vercel
+.vercel
+
+#deploy
+serverless.yml
+
+# jest
+.jest-cache
+
+# secrets
+*.secret.*
+
+.turbo

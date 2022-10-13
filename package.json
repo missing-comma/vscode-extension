@@ -1,0 +1,41 @@
+{
+	"name": "@missing-comma/vscode-extension",
+	"version": "0.0.0",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/base/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev --parallel",
+		"lint": "turbo run lint",
+		"deploy": "turbo run deploy",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"web": "yarn workspace web",
+		"utils": "yarn workspace @missing-comma/utils",
+		"ui": "yarn workspace @missing-comma/ui"
+	},
+	"devDependencies": {
+		"@types/uuid": "^8.3.4",
+		"eslint-config-custom": "latest",
+		"prettier": "latest",
+		"turbo": "latest"
+	},
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=14.0.0"
+	},
+	"dependencies": {},
+	"packageManager": "yarn@1.22.10",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/missing-comma/vscode-extension.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/missing-comma/vscode-extension/issues"
+	},
+	"homepage": "https://github.com/missing-comma/vscode-extension#readme"
+}

@@ -1,0 +1,11 @@
+{
+	"extends": "@missing-comma/tsconfig/vscode.json",
+	"compilerOptions": {
+		"rootDir": "src",
+		"baseUrl": "./src",
+		"paths": {
+			"~/*": ["./*"]
+		}
+	},
+	"exclude": ["node_modules", "./*.ts"]
+}

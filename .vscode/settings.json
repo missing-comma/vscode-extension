@@ -1,0 +1,24 @@
+{
+	"typescript.preferences.importModuleSpecifierEnding": "minimal",
+	"typescript.preferences.importModuleSpecifier": "shortest",
+	"typescript.preferences.includePackageJsonAutoImports": "on",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		"**/.jest-cache": true,
+		"**/.turbo": true,
+		"{apps,packages}/**/node_modules": false,
+		"**/node_modules/[^@]*": true,
+		"**/node_modules/@[^m]*": true,
+		"**/node_modules/@m[^i]*": true,
+		"**/node_modules/@mi[^s]*": true,
+		"**/node_modules/@mis[^s]*": true,
+		"**/node_modules/@miss[^i]*": true,
+		"**/node_modules/@missi[^n]*": true,
+		"**/node_modules/@missin[^g]*": true
+	}
+}

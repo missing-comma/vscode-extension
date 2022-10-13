@@ -1,0 +1,9 @@
+{
+	"extends": "@missing-comma/tsconfig/node.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"noEmit": false
+	},
+	"include": ["./object/**/*.ts"],
+	"exclude": ["dist", "build", "node_modules"]
+}

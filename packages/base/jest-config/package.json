@@ -1,0 +1,22 @@
+{
+	"name": "@missing-comma/jest-config",
+	"version": "0.0.0",
+	"main": "./index.ts",
+	"types": "./index.ts",
+	"license": "MIT",
+	"files": [
+		"eslint-preset.js"
+	],
+	"dependencies": {
+		"babel-jest": "^28.0.2",
+		"jest": "^28.0.2",
+		"jest-transform-stub": "^2.0.0",
+		"ts-jest": "^27.1.4",
+		"ts-node": "^10.7.0"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.4.1",
+		"@missing-comma/tsconfig": "*",
+		"typescript": "^4.5.3"
+	}
+}

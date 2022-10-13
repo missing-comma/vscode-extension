@@ -1,0 +1,28 @@
+{
+	"name": "@missing-comma/jester",
+	"version": "0.0.0",
+	"main": "./index.ts",
+	"types": "./index.ts",
+	"license": "MIT",
+	"files": [
+		"eslint-preset.js"
+	],
+	"scripts": {
+		"lint": "eslint *.ts*",
+		"test": "jest --runInBand"
+	},
+	"dependencies": {
+		"babel-jest": "^28.0.2",
+		"jest": "^28.0.2",
+		"jest-transform-stub": "^2.0.0",
+		"ts-jest": "^27.1.4",
+		"ts-node": "^10.7.0"
+	},
+	"devDependencies": {
+		"@missing-comma/eslint-config-custom": "*",
+		"@missing-comma/tsconfig": "*",
+		"@missing-comma/jest-config": "*",
+		"@types/jest": "^27.4.1",
+		"typescript": "^4.5.3"
+	}
+}
